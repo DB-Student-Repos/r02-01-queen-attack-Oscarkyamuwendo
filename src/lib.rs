@@ -19,12 +19,12 @@ impl ChessPosition {
 
 impl Queen {
     pub fn new(position: ChessPosition) -> Self {
-        Queen { position }
+        Queen(position)
     }
 
     pub fn can_attack(&self, other: &Queen) -> bool {
-        let delta_rank = (self.position.rank - other.position.rank).abs();
-        let delta_file = (self.position.file - other.position.file).abs();
+        let delta_rank = (self.0.rank - other.0.rank).abs();
+        let delta_file = (self.0.file - other.0.file).abs();
         delta_rank == 0 || delta_file == 0 || delta_rank == delta_file
     }
 }
