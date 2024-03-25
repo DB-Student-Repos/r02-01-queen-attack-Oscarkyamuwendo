@@ -28,4 +28,3 @@ impl Queen {
         delta_rank == 0 || delta_file == 0 || delta_rank == delta_file
     }
 }
-}
